@@ -1,11 +1,11 @@
 import app from "../index.js";
 import { getRandomNumber } from "../utils/index.js";
 
-function NOD () {
+function NOD() {
   for (var x = arguments[0], i = 1; i < arguments.length; i++) {
     var y = arguments[i];
     while (x && y) {
-      x > y ? x %= y : y %= x;
+      x > y ? (x %= y) : (y %= x);
     }
     x += y;
   }
@@ -13,10 +13,9 @@ function NOD () {
 }
 
 const getAnswers = () => {
-
   const randomNumber1 = getRandomNumber(1, 10);
   const randomNumber2 = getRandomNumber(1, 10);
-  let correctAnswer = NOD(randomNumber1, randomNumber2).toString()
+  let correctAnswer = NOD(randomNumber1, randomNumber2).toString();
 
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
   return correctAnswer;
@@ -24,5 +23,5 @@ const getAnswers = () => {
 
 export default () =>
   app(getAnswers, {
-    rules: 'Find the greatest common divisor of given numbers.',
+    rules: "Find the greatest common divisor of given numbers.",
   });
