@@ -1,11 +1,12 @@
+/* eslint-disable prefer-rest-params */
 import app from '../index.js';
 import getRandomNumber from '../utils/index.js';
 
-function nod(...args) {
-  let x = args[0];
-  let y = args[0];
-  for (let i = 1; i < args.length; i += 1) {
-    y = args[i];
+function nod() {
+  let x = arguments[0];
+  let y = arguments[0];
+  for (let i = 1; i < arguments.length; i += 1) {
+    y = arguments[i];
     while (x && y) {
       // eslint-disable-next-line no-unused-expressions
       x > y ? (x %= y) : (y %= x);
