@@ -1,5 +1,4 @@
 import app from "../index.js";
-import readlineSync from "readline-sync";
 import { getRandomNumber } from "../utils/index.js";
 
 const getAnswers = () => {
@@ -24,8 +23,7 @@ const getAnswers = () => {
   correctAnswer = correctAnswer.toString()
 
   console.log(`Question: ${randomNumber1} ${action} ${randomNumber2}`);
-  const answer = readlineSync.question("Your answer: ");
-  return { correctAnswer, answer };
+  return correctAnswer;
 };
 
 export default () =>

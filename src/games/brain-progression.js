@@ -1,5 +1,4 @@
 import app from "../index.js";
-import readlineSync from "readline-sync";
 import { getRandomNumber } from "../utils/index.js";
 
 function getProgression () {
@@ -20,8 +19,7 @@ const getAnswers = () => {
   progression.splice(hideElem, 1, '..')
 
   console.log(`Question: ${progression.join(' ')}`);
-  const answer = readlineSync.question("Your answer: ");
-  return { correctAnswer, answer };
+  return correctAnswer;
 };
 
 export default () =>

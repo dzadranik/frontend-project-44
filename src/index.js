@@ -15,7 +15,7 @@ function stopGame(name, isCorrect) {
   }
 }
 
-function app(getAnswers, {rules}) {
+function app(getAnswers, { rules }) {
   let correctCount = 0;
   const numberOfAttempts = 3;
   const name = startGameAndGetName();
@@ -25,7 +25,8 @@ function app(getAnswers, {rules}) {
   }
 
   while (correctCount < numberOfAttempts) {
-    const {correctAnswer, answer} = getAnswers()
+    const correctAnswer = getAnswers();
+    const answer = readlineSync.question("Your answer: ");
 
     if (answer === correctAnswer) {
       correctCount += 1;
@@ -41,4 +42,4 @@ function app(getAnswers, {rules}) {
   stopGame(name, correctCount === numberOfAttempts);
 }
 
-export default app
+export default app;

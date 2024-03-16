@@ -1,5 +1,4 @@
 import app from "../index.js";
-import readlineSync from "readline-sync";
 import { getRandomNumber } from "../utils/index.js";
 
 function NOD () {
@@ -17,12 +16,10 @@ const getAnswers = () => {
 
   const randomNumber1 = getRandomNumber(1, 10);
   const randomNumber2 = getRandomNumber(1, 10);
-  let correctAnswer = NOD(randomNumber1, randomNumber2)
-  correctAnswer = correctAnswer.toString()
+  let correctAnswer = NOD(randomNumber1, randomNumber2).toString()
 
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
-  const answer = readlineSync.question("Your answer: ");
-  return { correctAnswer, answer };
+  return correctAnswer;
 };
 
 export default () =>
