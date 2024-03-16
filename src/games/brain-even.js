@@ -1,11 +1,6 @@
 import app from "../index.js";
 import readlineSync from "readline-sync";
-
-function getRandomNumber(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
-}
+import { getRandomNumber } from "../utils/index.js";
 
 const getAnswers = () => {
   const randomNumber = getRandomNumber(1, 100);
