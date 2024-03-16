@@ -1,21 +1,21 @@
-import app from "../index.js";
-import { getRandomNumber } from "../utils/index.js";
+import app from '../index.js';
+import getRandomNumber from '../utils/index.js';
 
 const getAnswers = () => {
-  const actions = ["+", "-", "*"];
+  const actions = ['+', '-', '*'];
   const randomNumber1 = getRandomNumber(1, 10);
   const randomNumber2 = getRandomNumber(1, 10);
   const action = actions[getRandomNumber(0, 2)];
   let correctAnswer = 0;
 
   switch (action) {
-    case "+":
+    case '+':
       correctAnswer = randomNumber1 + randomNumber2;
       break;
-    case "-":
+    case '-':
       correctAnswer = randomNumber1 - randomNumber2;
       break;
-    case "*":
+    default:
       correctAnswer = randomNumber1 * randomNumber2;
       break;
   }
@@ -25,7 +25,6 @@ const getAnswers = () => {
   return correctAnswer;
 };
 
-export default () =>
-  app(getAnswers, {
-    rules: "What is the result of the expression?",
-  });
+export default () => app(getAnswers, {
+  rules: 'What is the result of the expression?',
+});

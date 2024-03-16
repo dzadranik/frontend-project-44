@@ -1,8 +1,8 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 function startGameAndGetName() {
-  console.log("Welcome to the Brain Games!");
-  const name = readlineSync.question("May I have your name? ");
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
 }
@@ -26,14 +26,14 @@ function app(getAnswers, { rules }) {
 
   while (correctCount < numberOfAttempts) {
     const correctAnswer = getAnswers();
-    const answer = readlineSync.question("Your answer: ");
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer === correctAnswer) {
       correctCount += 1;
-      console.log("Correct!");
+      console.log('Correct!');
     } else {
       console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
+        `'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
       break;
     }
