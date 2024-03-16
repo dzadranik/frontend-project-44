@@ -12,6 +12,7 @@ const getAnswers = () => {
   const randomNumber = getRandomNumber(1, 50);
   const correctAnswer = isPrime(randomNumber) ? "yes" : "no";
 
+  console.log(`Question: ${randomNumber}`);
   return correctAnswer;
 };
 
